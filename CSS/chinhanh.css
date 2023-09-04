@@ -18,6 +18,7 @@ header img{
     height: 23px;
     align-items: center;
     gap: 9px;
+    margin-right: 117px;
 }
 .header1 p{
     padding-top: 15px;
@@ -64,6 +65,9 @@ header img{
     color: #3a6ad2;
 }
 
+.Location{
+    text-align: center;
+}
 
 
 
