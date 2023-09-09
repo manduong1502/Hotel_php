@@ -2,7 +2,7 @@
 	$host = "localhost";
 	$user = "root";
 	$password = "";
-	// $database = "db_fashion_mylishop"; (chưa sửa database)
+	$database = "db_poseidon_hotel";
 
 	// Create connection
 	$conn = mysqli_connect($host, $user, $password, $database);

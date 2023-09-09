@@ -1,3 +1,6 @@
+<?php
+require_once '../model/connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,22 +21,22 @@
             <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i></a>
             <a href="https://www.youtube.com/"><i class="fa-brands fa-square-youtube fa-xl" style="color: #000000;"></i></a>
         </div>
-        <img src="../IMG/logo/poseidon_logo.png" alt="">
+        <img src="../admin/IMG/logo/poseidon_logo.png" alt="">
         <div class="header2">
             <button class="login">ĐĂNG NHẬP</button>
             <i class="fa-solid fa-earth-asia fa-xl" style="color: #000000;"></i>
             <tr>
                 <td class="tdLabel"><label for="register_country" class="label"></label></td>
                 <td>
-                    <select name="country" id="register_country" style="width:100px; border: none; background-color: #EFE7E7;">
+                    <select name="country" id="register_country" style="width:100px; border: none; background-color: #a8d4ee;">
                         <option value="india">Vietnam</option>
                         <option value="pakistan">English</option>
                     </select>
                 </td>
             </tr>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #EFE7E7; border: none;">
-                    <i class="fa-solid fa-bars fa-xl" style="color: #000000;"></i>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #a8d4ee; border: none;">
+                    <i class="fa-solid fa-bars fa-xl" style="color: #000000; background: #a8d4ee"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                   <li><button class="dropdown-item" type="button">Điểm đến</button></li>
@@ -45,8 +48,24 @@
     </header>
 
     <div class="Location">
-        <h1>KHÁCH SẠN TẠI</h1>
+        
+        <h1 style="margin-top: 30px;">KHÁCH SẠN TẠI</h1>
+        <div class="container_card" style="display: flex; margin-right: 20px;">
+            <?php
+                $sql = "SELECT id_hotel,hotel,img FROM products WHERE id=1";
+                $result = mysqli_query($conn, $sql);
+                while ($kq = mysqli_fetch_assoc($result)) {
+                ?>
+                    <a href="hotel.php?id= <?php echo $products['id']; ?>">
+                        <div class="card" style="width: 18rem; display: grid; margin-right: 10px; margin-top: 30px;">
+                        <img style="object-fit: cover; height: 400px;" src="<?php echo $kq['img']; ?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text"><?php echo $kq['hotel'];?></p>
+                        </div>
+                    </div></a>
 
+                <?php } ?>
+        </div>
     </div>
 </body>
 </html>

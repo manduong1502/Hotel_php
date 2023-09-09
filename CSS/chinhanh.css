@@ -1,9 +1,14 @@
+body{
+    background: url(../admin/IMG/logo/OIP.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 header{
     display: flex;
     padding: 20px;
     justify-content: space-between;
     align-items: center;
-    background: #EFE7E7;
+    background: #a8d4ee;
     box-sizing: border-box;
 }
 
@@ -35,15 +40,18 @@ header img{
 }
 .header2 .language{
     padding-top: 4px;
-    background-color: #EFE7E7;
+    background-color: #a8d4ee;
     border: none;
+}
+.header2 .dropdown{
+    background-color: #a8d4ee;
 }
 
 
 .header2 .login{
     margin-right: 10px;
     padding-top: 4px;
-    background-color: #EFE7E7;
+    background-color: #a8d4ee;
     border: none;
     font-weight: bold;
 }
@@ -51,7 +59,7 @@ header img{
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid #a8d4ee;
     outline: none;
     border-radius: 6px;
     cursor: pointer;
@@ -67,6 +75,12 @@ header img{
 
 .Location{
     text-align: center;
+}
+.Location h1{
+    object-fit: cover;
+}
+.card{
+    
 }
 
 

@@ -42,30 +42,7 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 
 -- --------------------------------------------------------
 
---
--- Cấu trúc bảng cho bảng `categories`
---
 
-CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  'hotel' varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  'img' varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Đang đổ dữ liệu cho bảng `categories`
---
-
-INSERT INTO `categories` (`id`, `name`, `hotel`, `img`) VALUES  
-(1, 'Đà Nẵng', 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg'),
-(1, 'Đà Nẵng', 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg'),
-(1, 'Đà Nẵng', 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg'),
-(2, 'Hà Nội', 'Poseidon Grand Hà Nội Centre', 'IMG/Hanoi/sanh-chinh_1690268281.jpeg'),
-(2, 'Hà Nội', 'Poseidon Grand Xala', 'IMG/Hanoi/muong-thanh-ha-noi-centre-external-1_1678266019.jpg'),
-(2, 'Hà Nội', 'Poseidon Luxury Hà Nội', 'IMG/Hanoi/raw_9250-1_1660198860-1_1687163162.jpg'),
-(3, 'Sài gòn', 'Poseidon Grand Sài Gòn Centre', 'IMG/Saigon/_hkt6859_1679810462_1691467982.jpg'),
-(3, 'Sài gòn', 'Poseidon Luxury Sài Gòn', 'IMG/Saigon/muong-thanh-luxury-sai-gon-2_1660203978-2_1688715369.jpg');
 
 -- --------------------------------------------------------
 
@@ -136,6 +113,9 @@ INSERT INTO `orders` (`id`, `total`, `date_order`, `status`, `user_id`) VALUES
 --
 
 CREATE TABLE `products` (
+  `id_hotel` int(11) NOT NULL,
+  `hotel` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -143,6 +123,7 @@ CREATE TABLE `products` (
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` float NOT NULL,
   `saleprice` float NOT NULL,
+  `acreage` int NOT NULL,
   `created` date NOT NULL,
   `quantity` int(11) NOT NULL,
   `keyword` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -153,41 +134,28 @@ CREATE TABLE `products` (
 -- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `category_id`, `image`, `description`, `price`, `saleprice`, `created`, `quantity`, `keyword`, `status`) VALUES
-(2, '', 1, 'IMG/Danang/dn1_1654683350.jpg', '', 290000, 0, '2017-12-18', 8, '', 0),
-(3, 'Poseidon Grand Đà Nẵng', 1, 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg', '', 210000, 0, '2017-12-18', 10, '', 0),
-(4, 'Poseidon Luxury Sông Hàn', 1, 'IMG/Danang/sanh-chinh_1690268281.jpeg', '', 180000, 0, '2017-12-18', 7, '', 0),
--- (5, 'Áo Sơ Mi Nâu', 1, 'images/Danang/so-mi-xanh-tim-hoa-tiet-tron.jpg', '', 250000, 0, '2017-12-18', 12, '', 0),
-(6, 'Đầm viscose xanh', 2, 'images/fashion_girl/Green-Viscose-Dresses.jpg', '', 165000, 0, '2017-12-18', 15, '', 0),
-(7, 'Váy Màu Xanh', 2, 'images/fashion_girl/Set_ao_croptop_co_sen_chan_vay_mau_xanh.jpg', '', 155000, 0, '2017-12-18', 9, '', 0),
-(8, 'Váy Màu Hồng', 2, 'images/fashion_girl/Dress-Materials.jpg', '', 195000, 0, '2017-12-18', 19, '', 0),
-(9, 'Áo Khoác kaki', 2, 'images/fashion_girl/Ao_khoac_kaki_hai_lop_mau_ke.jpg', '', 265000, 0, '2017-12-18', 15, '', 0),
-(10, 'Đầm maxi hai dây', 2, 'images/fashion_girl/Dam_maxi_hai_day_kem_nit.jpg', '', 315000, 0, '2017-12-18', 10, '', 0),
-(11, 'Áo Sơ Mi Xanh', 3, 'images/hangmoive/ao so mi.jpg', '', 225000, 0, '2017-12-18', 10, '', 0),
-(12, 'Đầm Xòe Ren Màu Trắng', 3, 'images/hangmoive/Dam_xoe_phoi_ren_xinh_xan_mau_trang.jpg', '', 245000, 0, '2017-12-18', 20, '', 0),
-(13, 'Váy Đẹp Cho Phái Nữ', 3, 'images/hangmoive/womens-georgette.jpg', '', 275000, 0, '2017-12-18', 21, '', 0),
-(14, 'Vest Đen Chấm Nhỏ', 3, 'images/hangmoive/vest-den-cham-nho.jpg', '', 225000, 0, '2017-12-18', 17, '', 0),
-(15, 'Áo Sơ Mi Xanh Tím', 3, 'images/hangmoive/so-mi-xanh-tim-hoa-tiet-tron.jpg', '', 225000, 0, '2017-12-18', 6, '', 0),
-(16, 'Giày Nâu Xám Phái Nam', 3, 'images/hangmoive/Brown-Casual-Shoes.jpg', '', 235000, 0, '2017-12-18', 11, '', 0),
-(17, 'Giày Nâu Giản dị', 3, 'images/hangmoive/Roadster-Casual-Shoes.jpg', '', 245000, 0, '2017-12-18', 13, '', 0),
-(18, 'Giày adidas', 1, 'images/shoes/adidas-alphabounce-reflective-pack-2.jpg', '', 195000, 0, '2017-12-18', 15, '', 0),
-(19, 'Dép Su Quay Hậu', 1, 'images/shoes/dep quay hau.jpg', '', 115000, 0, '2017-12-18', 13, '', 0),
-(20, 'Giày Cao Gót Màu Nâu Bóng', 2, 'images/shoes/giay-cao-co-mau-nau-bong-tron.png', '', 199000, 0, '2017-12-18', 20, '', 0),
-(21, 'Dép Bạc Gót', 2, 'images/shoes/Silver-Heeled-Sandals.jpg', '', 299000, 0, '2017-12-18', 10, '', 0),
-(22, 'Giày Ống Cao', 3, 'images/hangmoive/Tan-Boots-425x498.jpg', '', 259000, 0, '2017-12-18', 10, '', 0),
-(23, 'Giày Thể Thao Năng Động', 2, 'images/shoes/Giay the thao nu xanh.jpg', '', 169000, 0, '2017-12-18', 25, '', 0),
-(24, 'Giày Cao Gót Su', 2, 'images/shoes/giay-cao-co-mau-nau-bong-tron.png', '', 269000, 0, '2017-12-18', 0, '', 0),
-(25, 'Giày Thể Thao Nike', 1, 'images/shoes/xanhduongfreetr5printtrainings-.jpg', '', 199000, 0, '2017-12-18', 13, '', 0),
-(26, 'Giày Thể Thao Xanh', 1, 'images/shoes/xanhairzoompegasus33runningsho.jpg', '', 189000, 0, '2017-12-18', 13, '', 0),
-(27, 'Đầm Dự Tiệc Màu Hồng Cam', 2, 'images/fashion_girl/Dam_du_tiec_dun_eo_ta_xeo_mau_hong_cam.jpg', '', 219000, 0, '2017-12-18', 20, '', 0),
-(28, 'Đầm Thai Sản Màu Xanh', 2, 'images/fashion_girl/Maternity-Store-300x351.jpg', '', 209000, 0, '2017-12-18', 30, '', 0),
-(30, 'Thắt Lưng Do Chạm Khắc', 1, 'images/fashion_boy/that-lung-da-khoa-tron-cham-khac-noi.png', '', 89000, 0, '2017-12-18', 15, '', 0),
-(31, 'Quần kaki Màu Nâu', 1, 'images/fashion_boy/quan-au-mau-bordeaux.jpg', '', 229000, 0, '2017-12-18', 15, '', 0),
-(32, 'Bộ Cotton Henley', 1, 'images/fashion_boy/Cotton-Henley-T-shirt.jpg', '', 299000, 0, '2017-12-18', 12, '', 0),
-(33, 'Váy Xám Đẹp', 2, 'images/fashion_girl/dress-f-blue.jpg', '', 239000, 0, '2017-12-22', 20, '', 0);
+INSERT INTO `products` (`id_hotel`, `hotel`, `img`,`id`, `name`, `category_id`, `image`, `description`, `price`, `saleprice`, `acreage`, `quantity`, `keyword`, `status`) VALUES
+(1, 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg',1, 'Phòng Superior Twin', 1, 'IMG/Danang/phòng1.jpg', '1 giường đơn, 1 giường king size', 1440000 , 0, '33m²', 8, '', 0),
+(1, 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg',2, 'Phòng Deluxe Twin', 1, 'IMG/Danang/phòng2.jpg', '2 giường đơn', 1843200, 0, '33m²', 10, '', 0),
+(1, 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg',3, 'Phòng Deluxe King', 1, 'IMG/Danang/phongf3.jpg', '1 giường king size', 1843200, 0, '33m²', 7, '', 0),
+(1, 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg',4, 'Phòng Deluxe Twin hướng biển', 1, 'IMG/Danang/phòng4.jpg', '2 giường đơn', 2016000, 0, '33m²', 12, '', 0),
+(1, 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg',5, 'Phòng Superior King', 2, 'IMG/Hanoi/hanoi1.jpg', '1 giường king size', 1496000, 0, '25m²', 15, '', 0),
+(1, 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg',6, 'Phòng Superior Twin', 2, 'IMG/Hanoi/hanoi2.jpg', '2 giường đơn', 1496000, 0, '25m²', 9, '', 0),
+(1, 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg',7, 'Phòng Deluxe Twin', 2, 'IMG/Hanoi/hanoi3.jpg', '2 giường đơn', 1700000, 0, '28m²', 19, '', 0),
+(1, 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg',8, 'Phòng Deluxe King', 2, 'IMG/Hanoi/hanoi4.jpg', '1 giường king size', 1700000, 0, '25m²', 15, '', 0),
+(1, 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg',9, 'Phòng Deluxe Queen', 2, 'IMG/Hanoi/hanoi5.jpg', '1 giường king size', 1850000, 0, '25m²', 15, '', 0);
+
+
 
 -- --------------------------------------------------------
-
+-- (1, 'Đà Nẵng', 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg'),
+-- (1, 'Đà Nẵng', 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg'),
+-- (1, 'Đà Nẵng', 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg'),
+-- (2, 'Hà Nội', 'Poseidon Grand Hà Nội Centre', 'IMG/Hanoi/sanh-chinh_1690268281.jpeg'),
+-- (2, 'Hà Nội', 'Poseidon Grand Xala', 'IMG/Hanoi/muong-thanh-ha-noi-centre-external-1_1678266019.jpg'),
+-- (2, 'Hà Nội', 'Poseidon Luxury Hà Nội', 'IMG/Hanoi/raw_9250-1_1660198860-1_1687163162.jpg'),
+-- (3, 'Sài gòn', 'Poseidon Grand Sài Gòn Centre', 'IMG/Saigon/_hkt6859_1679810462_1691467982.jpg'),
+-- (3, 'Sài gòn', 'Poseidon Luxury Sài Gòn', 'IMG/Saigon/muong-thanh-luxury-sai-gon-2_1660203978-2_1688715369.jpg');
 --
 -- Cấu trúc bảng cho bảng `product_order`
 --
