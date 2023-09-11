@@ -13,7 +13,7 @@ require_once '../model/connect.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="header1">
             <i class="fa-solid fa-phone fa-xl" style="color: #000000;"></i>
             <p>1900 9999</p>
@@ -45,19 +45,19 @@ require_once '../model/connect.php';
                 </ul>
               </div>
         </div>
-    </header>
+    </header> -->
 
     <div class="Location">
         
-        <h1 style="margin-top: 30px;">KHÁCH SẠN TẠI</h1>
-        <div class="container_card" style="display: flex; margin-right: 20px;">
+        <h1 style="margin-top: 30px;">KHÁCH SẠN TẠI SÀI GÒN</h1>
+        <div class="container_card" style="display: flex; margin:0 20px 0 20px;">
             <?php
-                $sql = "SELECT id_hotel,hotel,img FROM products WHERE id=1";
+                $sql = "SELECT * FROM products WHERE id_hotel=7";
                 $result = mysqli_query($conn, $sql);
                 while ($kq = mysqli_fetch_assoc($result)) {
                 ?>
-                    <a href="hotel.php?id= <?php echo $products['id']; ?>">
-                        <div class="card" style="width: 18rem; display: grid; margin-right: 10px; margin-top: 30px;">
+                    <a href="hotel_hanoi.php">
+                        <div class="card" style="width: 18rem; display: grid; margin-right: 10px; margin-top: 30px; width: 330px;">
                         <img style="object-fit: cover; height: 400px;" src="<?php echo $kq['img']; ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text"><?php echo $kq['hotel'];?></p>

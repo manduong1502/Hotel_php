@@ -133,32 +133,26 @@ CREATE TABLE `products` (
 --
 -- Đang đổ dữ liệu cho bảng `products`
 --
-
 INSERT INTO `products` (`id_hotel`, `hotel`, `img`,`id`, `name`, `category_id`, `image`, `description`, `price`, `saleprice`, `acreage`, `quantity`, `keyword`, `status`) VALUES
 (1, 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg',1, 'Phòng Superior Twin', 1, 'IMG/Danang/phòng1.jpg', '1 giường đơn, 1 giường king size', 1440000 , 0, '33m²', 8, '', 0),
-(1, 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg',2, 'Phòng Deluxe Twin', 1, 'IMG/Danang/phòng2.jpg', '2 giường đơn', 1843200, 0, '33m²', 10, '', 0),
-(1, 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg',3, 'Phòng Deluxe King', 1, 'IMG/Danang/phongf3.jpg', '1 giường king size', 1843200, 0, '33m²', 7, '', 0),
-(1, 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg',4, 'Phòng Deluxe Twin hướng biển', 1, 'IMG/Danang/phòng4.jpg', '2 giường đơn', 2016000, 0, '33m²', 12, '', 0),
-(1, 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg',5, 'Phòng Superior King', 2, 'IMG/Hanoi/hanoi1.jpg', '1 giường king size', 1496000, 0, '25m²', 15, '', 0),
-(1, 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg',6, 'Phòng Superior Twin', 2, 'IMG/Hanoi/hanoi2.jpg', '2 giường đơn', 1496000, 0, '25m²', 9, '', 0),
-(1, 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg',7, 'Phòng Deluxe Twin', 2, 'IMG/Hanoi/hanoi3.jpg', '2 giường đơn', 1700000, 0, '28m²', 19, '', 0),
-(1, 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg',8, 'Phòng Deluxe King', 2, 'IMG/Hanoi/hanoi4.jpg', '1 giường king size', 1700000, 0, '25m²', 15, '', 0),
-(1, 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg',9, 'Phòng Deluxe Queen', 2, 'IMG/Hanoi/hanoi5.jpg', '1 giường king size', 1850000, 0, '25m²', 15, '', 0);
+(2, 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg',2, 'Phòng Deluxe Twin', 1, 'IMG/Danang/phòng2.jpg', '2 giường đơn', 1843200, 0, '33m²', 10, '', 0),
+(3, 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg',3, 'Phòng Deluxe King', 1, 'IMG/Danang/phòng3.jpg', '1 giường king size', 1843200, 0, '33m²', 7, '', 0),
+(1, 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg',4, 'Phòng Deluxe Twin Pro', 1, 'IMG/Danang/phòng4.jpg', '2 giường đơn', 2016000, 0, '33m²', 12, '', 0),
+(2, 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg',5, 'Phòng Superior King', 1, 'IMG/Danang/phòng5.jpg', '1 giường king size', 1496000, 0, '25m²', 15, '', 0),
+(3, 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg',6, 'Phòng Superior Twin', 1, 'IMG/Danang/phòng6.jpg', '2 giường đơn', 1496000, 0, '25m²', 9, '', 0),
+(1, 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg',7, 'Phòng Deluxe Twin', 1, 'IMG/Danang/phòng7.jpg', '2 giường đơn', 1700000, 0, '28m²', 19, '', 0),
+(2, 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg',8, 'Phòng Deluxe King', 1, 'IMG/Danang/phòng8.jpg', '1 giường king size', 1700000, 0, '25m²', 15, '', 0),
+(3, 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg',9, 'Phòng Deluxe Queen', 1, 'IMG/Danang/phòng9.jpg', '1 giường king size', 1850000, 0, '25m²', 15, '', 0),
+(4, 'Mường Thanh Grand Hà Nội Centre', 'IMG/Hanoi/muong-thanh-ha-noi-centre-external-1_1678266019.jpg',10, 'Phòng Superior Twin', 2, 'IMG/Hanoi/phòng10.jpg', '2 giường đơn', 1490000, 0, '25m²', 15, '', 0),
+(5, 'Mường Thanh Grand Hà Nội Centre', 'IMG/Hanoi/muong-thanh-ha-noi-centre-external-1_1678266019.jpg',11, 'Phòng Deluxe Twin', 2, 'IMG/Hanoi/phòng11.jpg', '2 giường đơn', 1700000, 0, '28m²', 15, '', 0),
+(6, 'Mường Thanh Grand Hà Nội Centre', 'IMG/Hanoi/muong-thanh-ha-noi-centre-external-1_1678266019.jpg',12, 'Phòng Executive Suite', 2, 'IMG/Hanoi/phòng12.jpg', '1 giường king size', 1850000, 0, '53m²', 15, '', 0),
+(4, 'Mường Thanh Grand Xa la', 'IMG/Hanoi/raw_9250-1_1660198860-1_1687163162.jpg',13, 'Phòng Superior King', 2, 'IMG/Hanoi/phòng13.jpg', '1 giường king size', 1850000, 0, '30m²', 15, '', 0),
+(5, 'Mường Thanh Grand Xa la', 'IMG/Hanoi/raw_9250-1_1660198860-1_1687163162.jpg',14, 'Phòng Deluxe King', 2, 'IMG/Hanoi/phòng14.jpg', '1 giường king size', 1350000, 0, '30m²', 15, '', 0),
+(6, 'Mường Thanh Grand Xa la', 'IMG/Hanoi/raw_9250-1_1660198860-1_1687163162.jpg',15, 'Phòng Deluxe Twin', 2, 'IMG/Hanoi/phòng15.jpg', '2 giường đơn', 1750000, 0, '25m²', 15, '', 0),
+(4, 'Mường Thanh Grand Hà Nội Centre', 'IMG/Hanoi/muong-thanh-ha-noi-centre-external-1_1678266019.jpg',16, 'Phòng Deluxe Triple', 2, 'IMG/Hanoi/phòng16.jpg', '3 giường đơn', 1850000, 0, '32m²', 15, '', 0),
+(5, 'Mường Thanh Grand Hà Nội Centre', 'IMG/Hanoi/muong-thanh-ha-noi-centre-external-1_1678266019.jpg',17, 'Phòng Executive Suite', 2, 'IMG/Hanoi/phòng17.jpg', '1 giường queen size', 1980000, 0, '70m²', 15, '', 0),
+(6, 'Mường Thanh Grand Hà Nội Centre', 'IMG/Hanoi/muong-thanh-ha-noi-centre-external-1_1678266019.jpg',18, 'Phòng Grand Suite', 2, 'IMG/Hanoi/phòng18.jpg', '1 giường king size', 2250000, 0, '50m²', 15, '', 0);
 
-
-
--- --------------------------------------------------------
--- (1, 'Đà Nẵng', 'Poseidon Luxury Đà Nẵng', 'IMG/Danang/dn1_1654683350.jpg'),
--- (1, 'Đà Nẵng', 'Poseidon Grand Đà Nẵng', 'IMG/Danang/muong-thanh-grand-dn_1686538211.jpg'),
--- (1, 'Đà Nẵng', 'Poseidon Luxury Sông Hàn', 'IMG/Danang/anh-ngoai-3-_1678440201.jpg'),
--- (2, 'Hà Nội', 'Poseidon Grand Hà Nội Centre', 'IMG/Hanoi/sanh-chinh_1690268281.jpeg'),
--- (2, 'Hà Nội', 'Poseidon Grand Xala', 'IMG/Hanoi/muong-thanh-ha-noi-centre-external-1_1678266019.jpg'),
--- (2, 'Hà Nội', 'Poseidon Luxury Hà Nội', 'IMG/Hanoi/raw_9250-1_1660198860-1_1687163162.jpg'),
--- (3, 'Sài gòn', 'Poseidon Grand Sài Gòn Centre', 'IMG/Saigon/_hkt6859_1679810462_1691467982.jpg'),
--- (3, 'Sài gòn', 'Poseidon Luxury Sài Gòn', 'IMG/Saigon/muong-thanh-luxury-sai-gon-2_1660203978-2_1688715369.jpg');
---
--- Cấu trúc bảng cho bảng `product_order`
---
 
 CREATE TABLE `product_order` (
   `product_id` int(11) NOT NULL,
